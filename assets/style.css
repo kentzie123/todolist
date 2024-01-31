@@ -1,0 +1,172 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Playpen Sans', cursive;
+}
+body{
+    min-height: 100vh;
+    background-color: black;
+}
+.container{
+    position: relative;
+}
+.background{
+    display: flex;
+    position: relative;
+    background-image: url('./nice-business-desk-black-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 100%;
+}
+.light-mode{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    cursor: pointer;    
+    transition: all .3s;
+}
+.light-mode:hover{
+    top: 15px;
+    right: 15px;
+    height: 35px;
+    /* filter: brightness(1) invert(0); */
+}
+.todo-list-container{
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 600px;
+    width: 460px;
+}
+.title h1{
+    color: white;
+    letter-spacing: 12px;
+}
+.add-list-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #05121A;
+    height: 55px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+}
+.add-list-container input{
+    height: 40px;
+    background-color: #05121A;
+    color: white;
+    width: 400px;
+    border-radius: 5px;
+    border: none;
+}
+.add-list-container img{
+    height: 23px;
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.add-list-container img:hover{
+    transform: rotate(135deg);
+    opacity: .4;
+}
+.todo-container{
+    width: 460px;
+    height: 500px;
+    border-radius: 5px;
+    overflow-y: auto;
+    background-color: #05121A;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+/* For Webkit (Safari and Chrome) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000; /* Track color */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333; /* Thumb color */
+    border-radius: 5px; /* Rounded thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Thumb color on hover */
+}
+.todo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #05121A;
+    height: 55px;
+    width: 100%;
+    border-radius: 5px;
+    border-bottom: gray 1px solid;
+    color: rgb(175, 171, 171);
+    padding: 0 15px 0 15px;
+}
+.todo-name{
+    display: flex;
+}
+.checkbox-container{
+    position: relative;
+    border: 1px solid gray;
+    height: 25px;
+    width: 25px;
+    margin-right: 20px;
+}
+.checkbox-container input[type=checkbox]{
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+.checkbox-container input[type=checkbox]:checked ~ span::after{
+    position: absolute;
+    content: '✔';
+    color: green;
+    left: 2px;
+    top: -8px;
+    font-size: 25px;
+} 
+.del-btn{
+    height: 20px;
+    cursor: pointer;
+}
+.del-btn:hover{
+    opacity: .4;
+}
+.indicator{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: gray;
+    font-size: x-small;
+    height: 45px;
+    width: 100%;
+    border-top: gray 1px solid;
+    background-color: #05121A;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.indicator-btns span{
+    margin-left: 3px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+.indicator-btns span:hover{
+    color: wheat;
+}
+.indicator .clear-btn:hover{
+    cursor: pointer;
+    color: wheat;
+}
